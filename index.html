@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイ・フォントブック</title>
+<style>
+:root{--bg:#f6f6f4;--fg:#1c1c1a;--mu:#6b6b66;--cd:#fff;--bd:#dcdcd6;--ac:#d9480f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--fg:#ecece8;--mu:#9a9a94;--cd:#1d1d1b;--bd:#33332f;--ac:#ff8a4c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141413;--fg:#ecece8;--mu:#9a9a94;--cd:#1d1d1b;--bd:#33332f;--ac:#ff8a4c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,"Yu Gothic UI","Hiragino Sans",sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--bd);padding:10px 16px}
+.r{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0}
+h1{font-size:18px;margin:0 8px 0 0}
+button,select,input{font:inherit;color:inherit;background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:5px 10px}
+button{cursor:pointer}button:hover{border-color:var(--ac)}
+input[type=text],input[type=search]{min-width:180px}input[type=range]{padding:0}
+.ch{border-radius:99px;padding:3px 11px;font-size:12px}.ch.on{background:var(--ac);border-color:var(--ac);color:#fff}
+#st{color:var(--mu);font-size:12px}
+#g{--sz:34px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;padding:14px 16px}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;cursor:pointer;content-visibility:auto;contain-intrinsic-size:150px;min-width:0}
+.c:hover{border-color:var(--ac)}
+.h{display:flex;gap:6px;align-items:baseline}.h b{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.h i{color:var(--mu);font-size:12px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s{border:0;background:none;padding:0 2px;color:var(--mu)}.s.on{color:#f59f00}
+.p{font-size:var(--sz);line-height:1.3;margin:8px 0;overflow:hidden;max-height:3.9em;word-break:break-all}
+.t span{font-size:11px;color:var(--mu);border:1px solid var(--bd);border-radius:5px;padding:0 5px;margin-right:4px}
+#em{margin:12vh auto;max-width:520px;text-align:center;color:var(--mu);border:2px dashed var(--bd);border-radius:16px;padding:40px 20px}
+#ov{position:fixed;inset:0;background:rgba(217,72,15,.85);color:#fff;display:none;place-items:center;font-size:28px;z-index:20}
+#ov.on{display:grid}
+dialog{width:min(980px,96vw);max-height:92vh;background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:14px;padding:18px}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.big{font-size:48px;line-height:1.2;margin:8px 0;word-break:break-all}
+table{border-collapse:collapse;font-size:12px}td{padding:2px 12px 2px 0;vertical-align:top}td:first-child{color:var(--mu)}
+.mk{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:10px 0}
+.mk>div{container-type:inline-size;border-radius:8px;overflow:hidden;border:1px solid var(--bd);font-family:var(--ff);position:relative}
+.po{aspect-ratio:3/4;background:linear-gradient(160deg,#1b1b3a,#d9480f);color:#fff;padding:8cqw;display:flex;flex-direction:column;justify-content:flex-end}
+.po .bt{font-size:17cqw;line-height:1.1}.po .bs{font-size:5cqw;margin-top:3cqw}
+.bc{aspect-ratio:91/55;background:#fff;color:#222;padding:7cqw;display:flex;flex-direction:column;justify-content:space-between}
+.bc .bt{font-size:9cqw}.bc .bs{font-size:5cqw;color:#666}.bc small{font-size:4cqw}
+.lg{aspect-ratio:1;background:#fff;color:#111;display:grid;place-items:center;text-align:center}
+.lg em{font-style:normal;display:block;width:30cqw;height:30cqw;line-height:30cqw;border-radius:50%;background:#d9480f;color:#fff;font-size:17cqw;margin:0 auto 4cqw}.lg .bt{font-size:10cqw}
+.bn{aspect-ratio:16/9;background:#ffd43b;color:#111;padding:6cqw;display:flex;flex-direction:column;justify-content:center}.bn .bt{font-size:12cqw;line-height:1.15}.bn .bs{font-size:4.5cqw}
+.wb{background:#fff;color:#222;padding:6cqw}.wb .bt{font-size:9cqw;margin:0 0 3cqw;line-height:1.2}.wb p{font-size:4cqw;margin:0;line-height:1.8}
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:3px;font-size:22px;font-family:var(--ff)}
+.gl span{border:1px solid var(--bd);border-radius:6px;text-align:center;padding:2px 0;cursor:pointer;background:var(--cd)}
+#g.gp{display:block}.fm{border:1px solid var(--bd);border-radius:12px;padding:8px 10px;background:color-mix(in srgb,var(--fg) 4%,transparent);margin-bottom:10px}.fh{display:flex;gap:8px;align-items:center;cursor:pointer;font-weight:600}.fh small{color:var(--mu);font-weight:400}.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin-top:8px}.fm.cl .fg{display:none}#pm{position:fixed;z-index:30;background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:10px;width:240px;box-shadow:0 8px 30px rgba(0,0,0,.25);display:none}#pm label{display:block}.pr{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}.pr>div{border:1px solid var(--bd);border-radius:8px;padding:8px;background:var(--cd)}.cr{border-bottom:1px solid var(--bd);padding:8px 0}.cr small{color:var(--mu)}@media print{header,#ov,dialog,.s{display:none!important}#g{grid-template-columns:repeat(3,1fr)}.c{break-inside:avoid;content-visibility:visible}}
+</style></head><body>
+<header>
+<div class="r"><h1>マイ・フォントブック</h1>
+<button onclick="fi.click()">ファイル選択</button><button onclick="fo.click()">フォルダ選択</button>
+<input id="q" type="search" placeholder="名前で検索…">
+<select id="so"><option value="fam">名前順</option><option value="w">太さ順</option><option value="gl">グリフ数順</option><option value="cat">カテゴリ順</option><option value="mk">メーカー順</option></select>
+<label><input type="checkbox" id="gp" checked> ファミリー枠</label><button onclick="fold(0)">展開</button><button onclick="fold(1)">折畳</button><select id="mf"><option value="">全メーカー</option></select><button id="cb" onclick="cmpOpen()">⚖ 比較(0)</button><button onclick="bk()">バックアップ</button><button onclick="rs.click()">復元</button><input id="rs" type="file" hidden accept=".json"><button onclick="clr()">保存消去</button><button onclick="csv()">CSV出力</button><button onclick="print()">印刷/PDF</button><button onclick="th()">🌓</button></div>
+<div class="r"><input id="tx" type="text" placeholder="サンプル文字を入力（空欄で自動）" style="flex:1;min-width:200px"><label>サイズ <input id="sz" type="range" min="14" max="90" value="34"></label><span id="st">C:\Windows\Fonts のフォントをここにドロップ</span></div>
+<div class="r" id="ch"></div>
+</header>
+<div id="em"><div style="font-size:40px">🔤</div><p><b>C:\Windows\Fonts</b> を開いて、Ctrl+A で全選択し、このページへドラッグ&amp;ドロップしてください。</p><p>TTF / OTF / TTC / OTC / WOFF / WOFF2 に対応。フォルダごとのドロップも可能です。ファイルはブラウザ内だけで処理され、外部へは送信されません。読み込んだフォントと設定はこのブラウザに自動保存されます。</p></div>
+<div id="g"></div>
+<div id="ov">ここにドロップして読み込み</div>
+<input id="fi" type="file" multiple hidden accept=".ttf,.otf,.ttc,.otc,.woff,.woff2"><input id="fo" type="file" hidden webkitdirectory>
+<div id="pm"></div><dialog id="dlg"></dialog>
+<script>
+const $=s=>document.querySelector(s),H=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let F=[],cur='all',fav=new Set,lists={},tags={},cmp=new Set,col=new Set;const DB=new Promise(r=>{try{const q=indexedDB.open('fontbook',1);q.onupgradeneeded=()=>{q.result.createObjectStore('files');q.result.createObjectStore('kv')};q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)}catch(e){r(null)}});const tx=async(s,m,f)=>{const d=await DB;if(!d)return;return new Promise(r=>{try{const t=d.transaction(s,m),q=f(t.objectStore(s));t.oncomplete=()=>r(q&&q.result);t.onerror=t.onabort=()=>r()}catch(e){r()}})};const snap=()=>({v:1,fav:[...fav],lists,tags,col:[...col],opt:{gp:$('#gp').checked,sz:$('#sz').value,so:$('#so').value}});const sv=()=>{const o=snap();tx('kv','readwrite',s=>s.put(o,'cfg'));try{localStorage.setItem('fbcfg',JSON.stringify(o))}catch(e){}};const cl=s=>String(s).replace(/[<>"'&]/g,'').trim().slice(0,24),allTags=()=>[...new Set(Object.values(tags).flat())].sort();
+
+
+const tg=(d,p)=>String.fromCharCode(d.getUint8(p),d.getUint8(p+1),d.getUint8(p+2),d.getUint8(p+3));
+function ent(b,o){const d=new DataView(b),n=d.getUint16(o+4),T={};for(let i=0;i<n;i++){const p=o+12+i*16;T[tg(d,p)]=[d.getUint32(p+8),d.getUint32(p+12),d.getUint32(p+4)]}return T}
+async function build(b,o){const T=ent(b,o),k=Object.keys(T);let pos=12+k.length*16;const h=new Uint8Array(pos),d=new DataView(h.buffer),P=[h];h.set(new Uint8Array(b,o,12));
+k.forEach((t,i)=>{const p=12+i*16,[of,l,c]=T[t];for(let j=0;j<4;j++)h[p+j]=t.charCodeAt(j);d.setUint32(p+4,c);d.setUint32(p+8,pos);d.setUint32(p+12,l);const pad=(4-l%4)%4;P.push(new Uint8Array(b,of,l),new Uint8Array(pad));pos+=l+pad});
+return new Blob(P).arrayBuffer()}
+async function rdr(b){const d=new DataView(b),sg=d.getUint32(0);let T={},w=0;
+if(sg===0x774F4646){w=1;const n=d.getUint16(12);for(let i=0;i<n;i++){const p=44+i*20;T[tg(d,p)]=[d.getUint32(p+4),d.getUint32(p+8),d.getUint32(p+12)]}}
+else if(sg!==0x774F4632)T=ent(b,0);
+const f=async t=>{const e=T[t];if(!e)return null;let s=b.slice(e[0],e[0]+e[1]);if(w&&e[1]<e[2])s=await new Response(new Blob([s]).stream().pipeThrough(new DecompressionStream('deflate'))).arrayBuffer();return s};
+f.has=t=>t in T;return f}
+async function meta(f){const m={},N={};let x=await f('name');
+if(x){const d=new DataView(x),c=d.getUint16(2),so=d.getUint16(4);for(let i=0;i<c;i++){const p=6+i*12,pl=d.getUint16(p),lg=d.getUint16(p+4),id=d.getUint16(p+6),l=d.getUint16(p+8),o=so+d.getUint16(p+10);if(pl==2||(pl==1&&lg))continue;let s='';
+if(pl==1)for(let j=0;j<l;j++)s+=String.fromCharCode(d.getUint8(o+j));else for(let j=0;j<l;j+=2)s+=String.fromCharCode(d.getUint16(o+j));
+const e=N[id]=N[id]||{};if(lg==0x411)e.j=s;else if(!e.e||lg==0x409)e.e=s}}
+const g=i=>(N[i]&&(N[i].e||N[i].j))||'';m.fam=g(16)||g(1);m.famJ=(N[16]&&N[16].j)||(N[1]&&N[1].j)||'';m.sub=g(17)||g(2);m.ver=g(5);m.mk=mkr(g(8)||g(0));
+x=await f('OS/2');if(x&&x.byteLength>=64){const d=new DataView(x),u=[42,46,50,54].map(o=>d.getUint32(o)),bit=n=>!!(u[n>>5]>>>(n&31)&1);m.w=d.getUint16(4);m.pan=[...new Uint8Array(x,32,10)];m.jp=bit(49)||bit(50)||bit(59);if(x.byteLength>=86&&d.getUint16(0)>=1&&(d.getUint32(78)>>>17&1))m.jp=true}
+x=await f('post');if(x&&x.byteLength>16)m.mono=new DataView(x).getUint32(12)>0;
+x=await f('maxp');if(x)m.gl=new DataView(x).getUint16(4);
+m.vr=f.has('fvar');m.col=['COLR','CBDT','sbix','SVG '].some(t=>f.has(t));m.cff=f.has('CFF ')||f.has('CFF2');return m}
+function cls(m,nm){const p=m.pan||[],n=nm.toLowerCase();
+if(p[0]==5||/symbol|wingding|webding|dingbat|emoji|icon|marlett|ornament/.test(n))return'記号・絵文字';
+if(m.mono||p[3]==9||/mono|console|courier|typewriter|ゴシック等幅/.test(n))return'等幅';
+if(p[0]==3||/script|hand|brush|writing|casual|calli|vivaldi|mistral|kunstler|ravie|行書|楷書|筆/.test(n))return'筆記体・手書き';
+if(p[0]==4||/stencil|jokerman|chiller|broadway|algerian|showcard|playbill|poster|display|blackadder|curlz|snap itc|ポップ|教科書体/.test(n))return'装飾・ディスプレイ';
+if(/sans|gothic|ゴシック|arial|calibri|verdana|segoe|meiryo|メイリオ/.test(n))return'サンセリフ・ゴシック';
+if((p[1]>=2&&p[1]<=10)||/明朝|mincho|serif|times|georgia|garamond|palatino|cambria|antiqua|century|bodoni|didot|constantia|rockwell|batang|simsun/.test(n))return'セリフ・明朝';
+return'サンセリフ・ゴシック'}
+const fk=s=>s.replace(/[\s-]*(ultra|extra|semi|demi)?[\s-]*(thin|light|regular|medium|bold|black|heavy|italic|oblique|book)(\s*(italic|oblique))?$/i,'').replace(/(Pro[NR]?|Std[N]?)\s*(UL|EL|DB|EB|L|R|M|B|H|U)$/i,'$1').trim()||s;
+const MK=[[/microsoft/i,'Microsoft'],[/adobe/i,'Adobe'],[/monotype/i,'Monotype'],[/morisawa|モリサワ/i,'モリサワ'],[/fontworks|フォントワークス/i,'フォントワークス'],[/dnp|大日本印刷/i,'DNP'],[/google/i,'Google'],[/apple/i,'Apple'],[/ricoh|リコー/i,'リコー'],[/ntt/i,'NTT'],[/sony/i,'Sony'],[/linotype/i,'Linotype'],[/itc|international typeface/i,'ITC'],[/bitstream/i,'Bitstream'],[/iwata|イワタ/i,'イワタ']];
+function mkr(s){if(!s)return'';const h=MK.find(x=>x[0].test(s));if(h)return h[1];const r=s.match(/(?:©|\(c\)|copyright)\s*(?:\d{4}[\s,–-]*)*(?:by\s+)?([^.,;\n]{2,36})/i);return(r?r[1]:s).replace(/\b(inc|ltd|corp|corporation|co|all rights reserved)\b.*$/i,'').replace(/[\s.,]+$/,'').slice(0,28)}
+function st(s){$('#st').textContent=s}
+async function load(fs,sav=true){fs=[...fs].filter(f=>/\.(ttf|otf|ttc|otc|woff2?)$/i.test(f.name));if(!fs.length)return st('対応フォントが見つかりません');
+let n=0,bad=0;for(const file of fs){st(`読み込み中 ${++n}/${fs.length}  ${file.name}`);
+try{if(sav)tx('files','readwrite',s=>s.put({n:file.name,b:file},file.name+'|'+file.size));const b=await file.arrayBuffer(),d=new DataView(b);let offs=[0];if(d.getUint32(0)===0x74746366)offs=[...Array(d.getUint32(8))].map((_,i)=>d.getUint32(12+i*4));
+for(let k=0;k<offs.length;k++){const key=file.name+'#'+k;if(F.some(x=>x.k===key))continue;
+const fb=offs.length>1||offs[0]?await build(b,offs[k]):b,m=await meta(await rdr(fb)),ff='fb'+F.length+'x'+Math.random().toString(36).slice(2,5),face=new FontFace(ff,fb);
+await face.load();document.fonts.add(face);
+const base=file.name.replace(/\.\w+$/,''),fam=m.fam||base,nm=(m.fam||'')+' '+(m.famJ||'')+' '+base;
+F.push({k:key,ff,file:file.name,size:file.size,ext:file.name.split('.').pop().toUpperCase(),fam,famJ:m.famJ,dn:m.famJ||fam,sub:m.sub||'',w:m.w||400,gl:m.gl||0,jp:!!m.jp,vr:m.vr,col:m.col,cff:m.cff,ver:m.ver,pan:m.pan,cat:cls(m,nm),mk:m.mk||'不明',fk:fk(fam),smp:m.jp?'デザインに、いい書体を。Aa 0123':'The quick brown fox Aa 0123'})}
+}catch(e){bad++}
+if(n%8==0){render();await new Promise(r=>setTimeout(r))}}
+render();st(`${F.length}書体を読み込みました`+(bad?`（${bad}ファイルは読み込めませんでした）`:''))}
+const FL={all:()=>1,fav:f=>fav.has(f.k),jp:f=>f.jp,en:f=>!f.jp,vr:f=>f.vr,col:f=>f.col};
+function list(){const q=$('#q').value.toLowerCase(),s=$('#so').value,mf=$('#mf').value;let r=F.filter(f=>(cur.startsWith('cat:')?f.cat==cur.slice(4):cur.startsWith('ls:')?(lists[cur.slice(3)]||[]).includes(f.k):cur.startsWith('tg:')?(tags[f.k]||[]).includes(cur.slice(3)):FL[cur](f))&&(!mf||f.mk==mf)&&(!q||(f.fam+f.famJ+f.sub+f.file+f.mk+(tags[f.k]||[]).join(' ')).toLowerCase().includes(q)));
+const cp={mk:(a,b)=>a.mk.localeCompare(b.mk,'ja')||a.dn.localeCompare(b.dn,'ja')||a.w-b.w,fam:(a,b)=>a.dn.localeCompare(b.dn,'ja')||a.w-b.w,w:(a,b)=>a.w-b.w||a.dn.localeCompare(b.dn,'ja'),gl:(a,b)=>b.gl-a.gl,cat:(a,b)=>a.cat.localeCompare(b.cat,'ja')||a.dn.localeCompare(b.dn,'ja')};return r.sort(cp[s])}
+function chips(){const cs={};F.forEach(f=>cs[f.cat]=(cs[f.cat]||0)+1);const C=(k,l,n)=>`<button class="ch ${cur==k?'on':''}" data-k="${k}">${l} ${n}</button>`;
+$('#ch').innerHTML=C('all','すべて',F.length)+C('fav','★お気に入り',fav.size)+Object.keys(cs).sort().map(c=>C('cat:'+c,c,cs[c])).join('')+C('jp','日本語対応',F.filter(f=>f.jp).length)+C('en','欧文のみ',F.filter(f=>!f.jp).length)+C('vr','可変',F.filter(f=>f.vr).length)+C('col','カラー',F.filter(f=>f.col).length)+Object.keys(lists).map(l=>C('ls:'+l,'📁'+H(l),lists[l].length)).join('')+allTags().map(t=>C('tg:'+t,'#'+H(t),F.filter(f=>(tags[f.k]||[]).includes(t)).length)).join('');mkSel()}
+function mkSel(){const s=$('#mf'),v=s.value,m=[...new Set(F.map(f=>f.mk))].sort((a,b)=>a.localeCompare(b,'ja'));s.innerHTML='<option value="">全メーカー</option>'+m.map(x=>`<option ${x==v?'selected':''} value="${H(x)}">${H(x)} (${F.filter(f=>f.mk==x).length})</option>`).join('')}
+let L=[];
+function render(){$('#em').style.display=F.length?'none':'block';chips();L=list();const t=$('#tx').value;
+const cd=(f,i)=>`<div class="c" data-i="${i}"><div class="h"><b>${H(f.dn)}</b><i>${H(f.sub)}</i><button class="s ${cmp.has(f.k)?'on':''}" data-c="${i}" title="比較">⚖</button><button class="s" data-p="${i}" title="リスト・タグ">📁</button><button class="s ${fav.has(f.k)?'on':''}" data-f="${i}">★</button></div><div class="p" style="font-family:'${f.ff}'">${H(t||f.smp)}</div><div class="t"><span>${f.cat}</span>${f.jp?'<span>日本語</span>':''}${f.vr?'<span>可変</span>':''}<span>${f.w}</span>${f.mk!='不明'?`<span>${H(f.mk)}</span>`:''}${(tags[f.k]||[]).map(x=>`<span>#${H(x)}</span>`).join('')}</div></div>`;
+const g=$('#g'),gp=$('#gp').checked;g.classList.toggle('gp',gp);if(!gp){g.innerHTML=L.map(cd).join('');return}
+const M=new Map;L.forEach((f,i)=>{(M.get(f.fk)||M.set(f.fk,[]).get(f.fk)).push([f,i])});let h='',sg='';const fl=()=>{if(sg)h+=`<div class="fg" style="margin:0 0 10px">${sg}</div>`;sg=''};
+M.forEach((a,k)=>{if(a.length<2){sg+=cd(a[0][0],a[0][1]);return}fl();const c=col.has(k);h+=`<section class="fm ${c?'cl':''}" data-fm="${H(k)}"><div class="fh"><span>${c?'▸':'▾'}</span>${H(k)} <small>${a.length}書体 · ${H(a[0][0].mk)}</small>${c?`<span style="font-family:'${a[0][0].ff}';font-size:18px;font-weight:400;margin-left:12px">${H(t||a[0][0].smp)}</span>`:''}</div><div class="fg">${a.map(x=>cd(x[0],x[1])).join('')}</div></section>`});fl();g.innerHTML=h}
+function fold(c){col=c?new Set(L.map(f=>f.fk)):new Set;sv();render()}
+$('#g').onclick=e=>{const s=e.target.closest('.s'),c=e.target.closest('.c');if(s){const d=s.dataset;if(d.f!=null){const f=L[d.f];fav.has(f.k)?fav.delete(f.k):fav.add(f.k);sv();s.classList.toggle('on');chips()}else if(d.c!=null){const f=L[d.c];cmp.has(f.k)?cmp.delete(f.k):cmp.add(f.k);s.classList.toggle('on');$('#cb').textContent='⚖ 比較('+cmp.size+')'}else pop(L[d.p],s);return}const h=e.target.closest('.fh');if(h){const k=h.parentNode.dataset.fm;col.has(k)?col.delete(k):col.add(k);sv();render();return}if(c)open(L[c.dataset.i])};
+$('#ch').onclick=e=>{const b=e.target.closest('[data-k]');if(b){cur=b.dataset.k;render()}};
+let tm;$('#tx').oninput=$('#q').oninput=()=>{clearTimeout(tm);tm=setTimeout(render,200)};$('#so').onchange=()=>{sv();render()};$('#mf').onchange=render;$('#gp').onchange=()=>{sv();render()};$('#sz').onchange=sv;$('#sz').oninput=e=>$('#g').style.setProperty('--sz',e.target.value+'px');
+function open(f){const d=$('#dlg'),jp=f.jp,A=jp?'山田 太郎':'Studio Nova',B=jp?'アートディレクター':'Art Director',T=jp?'新しい日常を、デザインする。':'Design for everyday life.',Bd=jp?'文字は情報を伝えるだけでなく、空気や温度、読む人の気持ちまでも形づくります。':'Type does more than carry information. It shapes tone, temperature and mood.';
+const gs=(jp?'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん アイウエオカキクケコサシスセソタチツテト 日本語永東京大阪文字書体':'')+'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&@#%!?()[]{}+-=*/§©®™¥€$£';
+const R=(a,b)=>`<tr><td>${a}</td><td>${H(b)}</td></tr>`;
+d.style.setProperty('--ff',`'${f.ff}'`);
+d.innerHTML=`<div class="r"><h2 style="margin:0;flex:1">${H(f.dn)} <small style="color:var(--mu)">${H(f.sub)}</small></h2><button id="cp">CSS名をコピー</button><button onclick="dlg.close()">閉じる</button></div>
+<div class="r"><label>文字色 <input type="color" id="c1" value="#1c1c1a"></label><label>背景 <input type="color" id="c2" value="#ffffff"></label><label>字間 <input type="range" id="ls" min="-100" max="400" value="0"></label><label>行間 <input type="range" id="lh" min="80" max="260" value="120"></label></div><div class="big" id="bg" style="font-family:var(--ff);background:#fff;color:#1c1c1a;padding:10px;border-radius:8px">${H($('#tx').value||f.smp)}</div>
+<div class="r"><input id="mt" type="text" value="${A}"><input id="ms" type="text" value="${B}"><input id="mb" type="text" value="${H(T)}" style="flex:1"></div>
+<div class="mk"><div class="po"><span class="bt">${T}</span><span class="bs">${B} / ${A}</span></div>
+<div class="bc"><div><div class="bt">${A}</div><div class="bs">${B}</div></div><small>tel 03-0000-0000<br>hello@example.com</small></div>
+<div class="lg"><div><em>${A[0]}</em><span class="bt">${A}</span></div></div>
+<div class="bn"><span class="bt">${T}</span><span class="bs">${B}</span></div>
+<div class="wb"><h3 class="bt">${T}</h3><p>${Bd}</p></div></div>
+<div class="r">${[12,16,24,36,48,72].map(s=>`<span style="font-family:var(--ff);font-size:${s}px;white-space:nowrap">${jp?'永あア':'Rag'} ${s}</span>`).join('')}</div>
+<h4>文字一覧（クリックでコピー）</h4><div class="gl">${[...gs.replace(/ /g,'')].map(c=>`<span>${H(c)}</span>`).join('')}</div>
+<h4>情報</h4><table>${R('ファミリー',f.fam)}${R('日本語名',f.famJ||'-')}${R('メーカー',f.mk)}${R('カテゴリ',f.cat)}${R('タグ',(tags[f.k]||[]).join(', ')||'-')}${R('ウェイト',f.w)}${R('グリフ数',f.gl||'-')}${R('形式',f.ext+(f.cff?' / CFF':' / TrueType')+(f.vr?' / 可変':'')+(f.col?' / カラー':''))}${R('ファイル',f.file+'（'+Math.round(f.size/1024)+' KB）')}${R('バージョン',f.ver||'-')}${R('日本語',f.jp?'対応':'非対応')}</table>`;
+const bind=(i,c,k)=>d.querySelector(i).oninput=e=>d.querySelectorAll(c).forEach(x=>x.textContent=k?e.target.value:e.target.value);
+d.querySelector('#mt').oninput=e=>d.querySelectorAll('.bc .bt,.lg .bt').forEach(x=>x.textContent=e.target.value);
+d.querySelector('#ms').oninput=e=>d.querySelectorAll('.bc .bs,.bn .bs').forEach(x=>x.textContent=e.target.value);
+d.querySelector('#mb').oninput=e=>d.querySelectorAll('.po .bt,.bn .bt,.wb .bt').forEach(x=>x.textContent=e.target.value);
+d.querySelector('#cp').onclick=e=>{navigator.clipboard.writeText(`font-family: '${f.fam}';`).then(()=>e.target.textContent='コピーしました')};
+d.querySelector('.gl').onclick=e=>{if(e.target.tagName=='SPAN')navigator.clipboard.writeText(e.target.textContent)};
+['#c1','#c2','#ls','#lh'].forEach(s=>d.querySelector(s).oninput=()=>{const g=i=>d.querySelector(i).value,b=d.querySelector('#bg');b.style.color=g('#c1');b.style.background=g('#c2');b.style.letterSpacing=g('#ls')/1000+'em';b.style.lineHeight=g('#lh')/100;d.querySelectorAll('.mk>div').forEach(x=>x.style.letterSpacing=g('#ls')/1000+'em')});
+const pr=pair(f);d.insertAdjacentHTML('beforeend',`<h4>組み合わせ提案（見出し＝この書体）</h4><div class="pr">${pr.map(b=>`<div><div style="font-family:'${f.ff}';font-size:22px;line-height:1.2">${H(jp?'新しい日常を':'New everyday')}</div><div style="font-family:'${b.ff}';font-size:13px;margin-top:6px">${H(Bd)}</div><small>${H(b.dn)} ${H(b.sub)}</small></div>`).join('')||'<small>候補がありません</small>'}</div>`);d.showModal()}
+function pair(f){const s=f.cat.startsWith('セリフ'),a=F.filter(b=>b.k!=f.k&&b.jp==f.jp&&b.w>=300&&b.w<=500&&b.fk!=f.fk&&(s?b.cat.startsWith('サ'):b.cat.startsWith('セ')));let h=0;for(const c of f.k)h=(h*31+c.charCodeAt(0))>>>0;return[0,1,2].map(i=>a[(h+i*Math.max(1,Math.floor(a.length/3)))%a.length]).filter((x,i,r)=>x&&r.indexOf(x)==i)}
+function pop(f,b){const p=$('#pm'),r=b.getBoundingClientRect(),ls=Object.keys(lists);p.innerHTML=`<b>${H(f.dn)}</b><div style="margin:6px 0">${ls.map(l=>`<label><input type="checkbox" data-l="${H(l)}" ${lists[l].includes(f.k)?'checked':''}> 📁 ${H(l)}</label>`).join('')||'<small>リストなし</small>'}</div><input id="nl" placeholder="新規リスト名 ⏎" style="width:100%;margin-bottom:6px"><input id="nt" placeholder="タグ（カンマ区切り）⏎" value="${H((tags[f.k]||[]).join(','))}" style="width:100%">`;p.style.display='block';p.style.left=Math.min(r.left,innerWidth-250)+'px';p.style.top=Math.min(r.bottom+4,innerHeight-230)+'px';
+p.onchange=e=>{const l=e.target.dataset.l;if(l==null)return;const a=lists[l];e.target.checked?a.includes(f.k)||a.push(f.k):a.splice(a.indexOf(f.k),1);sv();chips()};
+$('#nl').onkeydown=e=>{if(e.key!='Enter')return;const n=cl(e.target.value);if(n){(lists[n]=lists[n]||[]).includes(f.k)||lists[n].push(f.k);sv();chips();pop(f,b)}};
+$('#nt').onkeydown=e=>{if(e.key!='Enter')return;const a=e.target.value.split(/[,、]/).map(cl).filter(Boolean);a.length?tags[f.k]=a:delete tags[f.k];sv();render();p.style.display='none'}}
+document.addEventListener('click',e=>{if(!e.target.closest('#pm,[data-p]'))$('#pm').style.display='none'});
+addEventListener('keydown',e=>{if(e.key=='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();$('#q').focus()}});
+function cmpOpen(){const fs=F.filter(f=>cmp.has(f.k));if(fs.length<2)return st('各カードの ⚖ で2書体以上を選んでください');const d=$('#dlg');d.innerHTML=`<div class="r"><h2 style="margin:0;flex:1">比較</h2><input id="ct" type="text" placeholder="比較するテキスト" value="${H($('#tx').value)}" style="flex:1"><label>サイズ <input id="cs" type="range" min="16" max="120" value="48"></label><button onclick="cmp.clear();dlg.close();render();$('#cb').textContent='⚖ 比較(0)'">選択解除</button><button onclick="dlg.close()">閉じる</button></div>${fs.map(f=>`<div class="cr"><small>${H(f.dn)} ${H(f.sub)} · ${H(f.mk)} · ${f.w}</small><div class="ct" style="font-family:'${f.ff}';font-size:48px;line-height:1.3;word-break:break-all">${H($('#tx').value||f.smp)}</div></div>`).join('')}`;d.querySelector('#ct').oninput=e=>d.querySelectorAll('.ct').forEach(x=>x.textContent=e.target.value);d.querySelector('#cs').oninput=e=>d.querySelectorAll('.ct').forEach(x=>x.style.fontSize=e.target.value+'px');d.showModal()}
+function bk(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(snap(),null,1)],{type:'application/json'}));a.download='fontbook-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();st('バックアップを書き出しました')}
+async function clr(){await tx('files','readwrite',s=>s.clear());st('保存済みフォントを消去しました（設定は残ります）')}
+function apply(c){if(!c)return;fav=new Set(c.fav||[]);lists=c.lists||{};tags=c.tags||{};col=new Set(c.col||[]);const o=c.opt||{};if(o.gp!=null)$('#gp').checked=o.gp;if(o.sz){$('#sz').value=o.sz;$('#g').style.setProperty('--sz',o.sz+'px')}if(o.so)$('#so').value=o.so}
+$('#rs').onchange=async e=>{try{apply(JSON.parse(await e.target.files[0].text()));sv();render();st('設定を復元しました')}catch(x){st('復元に失敗しました')}};
+function csv(){const r=[['ファミリー','日本語名','スタイル','カテゴリ','太さ','グリフ数','日本語','形式','ファイル']].concat(list().map(f=>[f.fam,f.famJ,f.sub,f.cat,f.w,f.gl,f.jp?'○':'',f.ext,f.file]));
+const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+r.map(x=>x.map(v=>'"'+String(v||'').replace(/"/g,'""')+'"').join(',')).join('\n')],{type:'text/csv'}));a.download='fontbook.csv';a.click()}
+function th(){const r=document.documentElement,d=getComputedStyle(r).colorScheme.includes('dark')||matchMedia('(prefers-color-scheme:dark)').matches&&r.dataset.theme!='light';r.dataset.theme=d?'light':'dark'}
+async function walk(it,o){if(it.isFile)o.push(await new Promise(r=>it.file(r)));else if(it.isDirectory){const rd=it.createReader();let a;do{a=await new Promise(r=>rd.readEntries(r));for(const x of a)await walk(x,o)}while(a.length)}}
+let dc=0;addEventListener('dragenter',e=>{e.preventDefault();dc++;$('#ov').classList.add('on')});addEventListener('dragleave',()=>{if(--dc<=0)$('#ov').classList.remove('on')});addEventListener('dragover',e=>e.preventDefault());
+addEventListener('drop',async e=>{e.preventDefault();dc=0;$('#ov').classList.remove('on');const en=[...e.dataTransfer.items].map(i=>i.webkitGetAsEntry&&i.webkitGetAsEntry()).filter(Boolean),fl=[...e.dataTransfer.files];let o=[];
+if(en.length){for(const x of en)await walk(x,o)}if(!o.length)o=fl;load(o)});
+$('#fi').onchange=e=>load(e.target.files);$('#fo').onchange=e=>load(e.target.files);
+(async()=>{let c;try{c=await tx('kv','readonly',s=>s.get('cfg'))}catch(e){}if(!c)try{c=JSON.parse(localStorage.getItem('fbcfg'))}catch(e){}apply(c);render();const fs=await tx('files','readonly',s=>s.getAll());if(fs&&fs.length)await load(fs.map(x=>x.b),false);try{navigator.storage.persist()}catch(e){}})();
+</script></body></html>
